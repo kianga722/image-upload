@@ -1,7 +1,4 @@
 import React from 'react';
-import GalleryContextProvider from './contexts/GalleryContext';
-import UploadContextProvider from './contexts/UploadContext';
-
 import Header from './components/Header';
 import Gallery from './components/Gallery';
 import ImageModal from './components/ImageModal';
@@ -15,19 +12,15 @@ function App() {
     <>
       <Global styles={global} />
 
-      <GalleryContextProvider initialSelectedImage={null}>
-        <UploadContextProvider initialModalOpen={false}>
-          <div id='content-wrapper'>
-            <Header />
-            
-            <Gallery />
+      <div id='content-wrapper'>
+        <Header />
+        
+        <Gallery />
 
-            <ImageModal />
+        <ImageModal />
 
-            <UploadModal />
-          </div>
-        </UploadContextProvider>
-      </GalleryContextProvider>
+        <UploadModal />
+      </div>
     </>
   );
 }
